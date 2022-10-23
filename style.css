@@ -1,0 +1,40 @@
+.registration {
+  box-shadow: 0 0 10px rgb(217, 217, 217);
+  padding: 15px;
+  height: 90vh;
+  width: 400px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+input {
+  padding: 15px 0px;
+  outline: 0;
+  border-width: 0 0 3px;
+  border-color: grey;
+}
+input:focus {
+  border-color: rgba(255, 255, 0, 0.876);
+}
+.error {
+  border-color: rgba(248, 0, 0, 0.876);
+}
+.pass_error {
+  background-color: rgba(255, 35, 35, 0.993);
+}
+input:nth-child(6) {
+  margin-bottom: 30px;
+}
+.registrate {
+  margin-bottom: 20px;
+  text-align: center;
+  color: red;
+}
