@@ -16,31 +16,32 @@
   <body>
     <div class="registration">
       <h3>Регистрация</h3>
-      <form class="registration-form">
-        <input type="text" id="name" placeholder="Имя" onmouseout="error()" />
+      <form class="registration-form" novalidate>
+        <input type="text" id="name" placeholder="Имя"  />
         <input
           type="text"
           id="surname"
           placeholder="Фамилия"
-          onmouseout="error()"
+         required
         />
-        <input type="text" id="login" placeholder="Придумайте логин" />
-        <input type="text" id="password" placeholder="Придумайте пароль" />
+        <input type="text" id="login" placeholder="Придумайте логин" required/>
+        <input type="text" id="password" placeholder="Придумайте пароль" required/>
         <input
           type="text"
           id="password_check"
           placeholder="Повторите пароль"
-          onmouseout="passwordCheck()"
+         
         />
-        <input type="tel" id="phone" placeholder="Номер мобильного телефона" onmouseout="checkNumber()"/>
+        <input type="tel" id="phone" placeholder="Номер мобильного телефона" pattern="[0-9]{11}" required/>
         <div class="registrate" id="registrate"></div>
-        <button
+        <button 
           type="button"
           class="btn btn-warning mb-4"
           onclick="registrate()"
         >
           Зарегистрироваться
         </button>
+        <div id="error"></div>
         <div class="conditions">
           <input
             type="checkbox"
@@ -64,6 +65,7 @@
           </p>
         </div>
       </form>
+      
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"

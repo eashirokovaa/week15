@@ -1,7 +1,31 @@
+let errors = [];
+
+function checkValidity(input) {
+  let validity = input.validity;
+  if (validity.valueMissing) {
+    errors.push("Поле " + input.placeholder + " не заполнено ");
+  }
+  if (validity.patternMismatch) {
+    errors.push(
+      "Поле " + input.placeholder + " не соответствует заданному формату"
+    );
+  }
+}
+
+function registrate() {
+  errors = [];
+  let inputs = document.querySelectorAll("input");
+  for (let input of inputs) {
+    checkValidity(input);
+  }
+
+  document.getElementById("error").innerHTML = errors.join(', <br>');
+}
+
 function getColor(value) {
   document.body.style.backgroundColor = value;
 }
-function registrate() {
+/*function registrate() {
   let phone = document.getElementById("phone").value;
   let surname = document.getElementById("surname").value;
   let login = document.getElementById("login").value;
@@ -46,4 +70,4 @@ function checkNumber() {
     document.getElementById("registrate").innerHTML =
       "Введите корректный номер";
   }
-}
+}*/
